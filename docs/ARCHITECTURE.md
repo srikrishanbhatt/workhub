@@ -10,7 +10,7 @@ WorkHub is a conventional Laravel web application. No product-specific applicati
 - **Interface:** Server-rendered Blade views
 - **Application style:** Laravel's conventional routes, controllers, Eloquent models, migrations, and Form Requests as the project grows
 - **Database:** To be selected during Phase 0; MySQL is the proposed local-development choice
-- **Authentication:** To be selected during Phase 0; Laravel Breeze with Blade is the leading candidate when we begin the Users phase
+- **Authentication:** Laravel Breeze with Blade, introduced in Phase 2
 
 ## Initial domain model (not implemented)
 
@@ -32,7 +32,52 @@ The initial entities we expect to design are:
 - A project will have many tasks, and each task will belong to one project.
 - A task may be assigned to one user; assignment is optional.
 
+### Planned organization fields
+
+- `id`
+- `name`
+- `owner_id`
+- Laravel timestamps
+
+Organizations will not have a description initially. We can add one later if a real product requirement calls for it.
+
+### Planned organization membership fields
+
+- `organization_id`
+- `user_id`
+- `role`
+- Laravel timestamps
+
+The `organization_id` and `user_id` combination will be unique, so a user can only hold one membership in the same organization.
+
+### Planned project fields
+
+- `id`
+- `organization_id`
+- `name`
+- Laravel timestamps
+
+Projects will not have a description initially. Project status and other workflow details will be introduced only when a feature needs them.
+
+### Planned task fields
+
+- `id`
+- `project_id`
+- `title`
+- `description` (optional)
+- `assigned_to_user_id` (optional)
+- `status`
+- `priority`
+- `due_date` (optional)
+- Laravel timestamps
+
+Allowed status and priority values will be designed in the Tasks phase. Comments, attachments, activity history, and notifications are deliberately outside the initial task model.
+
 These are design decisions only. We will create migrations and Eloquent relationships in their respective learning phases.
+
+## Authentication plan
+
+WorkHub will use Laravel Breeze with Blade for authentication. We will introduce it in Phase 2, not during project planning. The initial interface will use Blade server-rendered views.
 
 ## Boundaries
 

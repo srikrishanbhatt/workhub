@@ -2,17 +2,25 @@
 
 ## Current phase
 
-**Phase 0 — Project Planning**
+**Phase 1 — Laravel Foundation (complete)**
 
 ## Current topics
 
-- Laravel installation and application structure
-- Local development environment and configuration
-- Defining WorkHub's initial domain model
+- None. Awaiting instruction to begin Phase 2.
 
 ## Completed topics
 
-- None yet. Installing the application is in progress until we review its structure together.
+- Laravel installation and application structure
+- Local development environment and configuration
+- Initial WorkHub domain model and relationships
+- Initial database and authentication direction
+- Basic web routing with a route closure
+- Controllers and controller-based routes
+- Blade views and passing data from controllers
+- Request / response lifecycle and Artisan route inspection
+- Environment configuration with `.env` and `config:clear`
+- Route parameters, named routes, and redirect responses
+- Middleware and the `web` route group
 
 ## Upcoming topics
 
